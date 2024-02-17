@@ -1,1 +1,0 @@
-console.log("Hello Nguyen Quoc Thinh")
