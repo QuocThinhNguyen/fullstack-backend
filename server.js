@@ -1,14 +1,12 @@
-const http = require('http'); // node.js
+const express = require('express')
+//import express from 'express'; // không dùng import được
+const app = express()
+const port = 8080
 
-const hostname = 'localhost'; // localhost
-const port = 3000;
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
 
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello World with Quoc Thinh\n');
-});
-
-server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
-});
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
